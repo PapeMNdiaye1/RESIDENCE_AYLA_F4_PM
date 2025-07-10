@@ -11,6 +11,38 @@ html {
   height: 100%;
 }
 
+.a-dialog {
+  background-color: rgba(241, 241, 241, 0.9);
+  font-family: "Ubuntu", sans-serif;
+  height: 8.5em;
+  border-radius: 1.5em;
+  background: rgba(255, 255, 255, 0.31);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f1f1f1;
+}
+
+.a-dialog-allow-button {
+  background-color: rgba(73, 136, 226, 0.9);
+  color: #f1f1f1;
+  border-radius: 1.5em;
+}
+
+.a-dialog-deny-button {
+  background-color: gray;
+  border-radius: 1.5em;
+  color: #f1f1f1;
+}
+
+.a-dialog-ok-button {
+  background-color: black;
+  border-radius: 1.5em;
+  color: #f1f1f1;
+}
+
 .hover_loader_container {
   width: 100vw;
   height: 100vh;
