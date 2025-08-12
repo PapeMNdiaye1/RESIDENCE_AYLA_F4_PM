@@ -15,6 +15,8 @@ body,
 html {
   width: 100%;
   height: 100%;
+  font-family: "Roboto", sans-serif;
+  background-color: #222;
 }
 
 .a-dialog {
@@ -135,6 +137,31 @@ html {
   display: none;
 }
 
+.canvas {
+  background-color: red;
+}
+
+.canvas.a-canvas {
+  cursor: none;
+  background-color: red;
+}
+
+.canvas.a-canvas.a-mouse-cursor-hover {
+  cursor: none;
+}
+
+.canvas.a-canvas.a-mouse-cursor-hover:hover {
+  cursor: none;
+}
+
+.fullscreen {
+  display: none;
+}
+.a-enter-vr-button {
+  background-image: url("./Images/PNG/VR-icon.png");
+  display: none;
+}
+
 .the_blach_hover {
   width: 100vw;
   height: 0vh;
@@ -164,15 +191,50 @@ html {
     background-size: 90%;
     background-position: center;
     transform: scale(1);
-    display: none;
+    // filter: invert(100%);
 
     &:hover {
+      background-image: url("./Images/PNG/VR-icon.png");
       transform: scale(1.1);
     }
   }
 
   &:hover {
     background: rgba(55, 55, 60, 0);
+  }
+}
+
+.the_info {
+  position: absolute;
+  @include cent();
+  background-color: #f1f1f1;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  bottom: 2%;
+  left: 2%;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  border: 0.5em solid #f1f1f1;
+  display: none;
+
+  ion-icon {
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    transition-duration: 0.1s;
+  }
+
+  ion-icon:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 }
 
@@ -191,14 +253,35 @@ html {
   background-image: url("./Images/PNG/favicon.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  -webkit-user-select: none;
+  opacity: 0;
+  transition-duration: 0.7s;
 
   &:hover {
     transform: scale(1.1);
   }
 }
 
-@media all and (max-width: 1000px) {
+.The-Guide {
+  background-image: url("./Images/PNG/Phone-GIF.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  // background-color: red;
+  z-index: 50;
+  width: 16em;
+  height: 10em;
+  position: absolute;
+  margin: auto;
+  bottom: -105%;
+  left: calc(50% - 8em);
+  display: none;
+  opacity: 1;
+  animation-duration: 0.7s;
+  pointer-events: none;
+}
+
+@media all and (max-width: 500px) {
   .The_Image {
     width: 93vw;
     left: 2.5vw;
@@ -213,10 +296,6 @@ html {
   .a-enter-vr {
     background-image: url("./Images/PNG/VR-icon.png");
     display: flex;
-
-    .a-enter-vr-button {
-      display: flex;
-    }
   }
 
   .the_gallery_container {
@@ -250,5 +329,13 @@ html {
     bottom: 1em;
     right: none;
     left: 1em;
+  }
+
+  .The-Guide {
+    pointer-events: none;
+    display: flex;
+    bottom: calc(30% - 5em);
+    opacity: 1;
+    transition-duration: 0.7s;
   }
 }
