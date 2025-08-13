@@ -148,6 +148,7 @@ body {
   background: transparent url("./Images/PNG/VR-icon.png") center/90% no-repeat;
   border-radius: 0;
   transform: scale(1);
+  display: none;
 }
 .a-enter-vr .a-enter-vr-button:hover {
   transform: scale(1.1);
